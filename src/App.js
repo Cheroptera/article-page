@@ -8,6 +8,9 @@ import axios from 'axios'
 export const App = () => {
   const [articles, setArticles] = useState([])
 
+  // fetching the articles from the json-server mock API. I then pass 'articles'
+  // as props to the ArticlePage and FullArticlePage components.
+
   useEffect(() => {
     const getArticles = async () => {
       try {
@@ -30,7 +33,7 @@ export const App = () => {
             articles={articles} />} />
         <Route
           path="/articles/:id"
-          element={<FullArticlePage />} />
+          element={<FullArticlePage articles={articles} />} />
         <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </BrowserRouter>

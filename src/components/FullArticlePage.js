@@ -1,7 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-// import { API_URL } from 'utils/urls';
-// import axios from 'axios';
 import RenderHTML from './RenderHTML';
 import { RemainingArticlesList } from './RemainingArticlesList';
 

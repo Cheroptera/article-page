@@ -1,32 +1,57 @@
-/* eslint-disable max-len */
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { ArticlePreview } from './ArticlePreview'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
+import { ArticlePreview } from './ArticlePreview';
+import RenderHTML from './RenderHTML';
 
 const ArticlePage = ({ articles }) => {
+  const articlesPerPage = 3; // Number of articles to display per page
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  // Calculate the index of the first and last articles to display on the current page
+  const indexOfLastArticle = (currentPage + 1) * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+
+  // Slice the articles array based on the current page
+  const paginatedArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
+
   return (
     <div className="main-container">
-      {articles.map((article) => {
-        const articleBodyHtml = article.body.find((item) => item.type === 'text')?.html; // Gets the "html" property from the "body" array
+      {paginatedArticles.map((article) => {
+        const articleBodyHtml = article.body.find((item) => item.type === 'text')?.html;
+        const articleHtmlContent = articleBodyHtml ? <RenderHTML html={articleBodyHtml} /> : null;
         return (
-          <Link
-            className="news-link"
-            key={article.id}
-            to={`/articles/${article.id}`}>
-            <ul className="news-list">
-              <li><ArticlePreview
+          <Link className="list-item-container" key={article.id} to={`/articles/${article.id}`}>
+            <div className="news-list-item">
+              <ArticlePreview
                 id={article.id}
                 title={article.title}
                 urlToImage={article?.body.find((item) => item.type === 'image')?.src}
-                summary={articleBodyHtml}
+                summary={articleHtmlContent}
                 publicationDate={article.first_published_at} />
-              </li>
-            </ul>
+            </div>
           </Link>
-        )
+        );
       })}
-    </div>
-  )
-}
 
-export default ArticlePage
+      {/* Pagination */}
+      <div className="pagination-container">
+        <ReactPaginate
+          previousLabel="Previous"
+          nextLabel="Next"
+          pageCount={Math.ceil(articles.length / articlesPerPage)}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handlePageChange}
+          containerClassName="pagination"
+          activeClassName="active" />
+      </div>
+    </div>
+  );
+};
+
+export default ArticlePage;
