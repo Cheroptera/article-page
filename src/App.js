@@ -15,7 +15,6 @@ export const App = () => {
     const getArticles = async () => {
       try {
         const response = await axios.get(API_URL('articles'))
-        console.log(response)
         setArticles(response.data)
       } catch (error) {
         console.error('Error fetching list', error)
