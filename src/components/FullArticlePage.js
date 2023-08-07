@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import RenderHTML from './RenderHTML';
 import { RemainingArticlesList } from './RemainingArticlesList';
 
@@ -8,7 +8,11 @@ import { RemainingArticlesList } from './RemainingArticlesList';
 
 const FullArticlePage = ({ articles }) => {
   const { id } = useParams();
+  const navigate = useNavigate()
 
+  const backButton = () => {
+    navigate(-1)
+  }
   // First, I used a useEffect here to do a fetch for that specific id, whenever the
   // id changed, but then it hit me that that API call was unnecessary, since I already could
   // pass down articles as a prop and filter through the array.
@@ -32,9 +36,11 @@ const FullArticlePage = ({ articles }) => {
     return date.toLocaleString('en-US', options);
   };
 
+  const isPaid = article.paid === true
+
   return (
     <div className="full-article-container">
-      <div className="article">
+      <div className={`full-article ${isPaid ? 'locked' : ''}`}>
         <div className="article-image">
           {/* Conditionally render image */}
           {article?.body?.find((item) => item.type === 'image') && (
@@ -71,6 +77,12 @@ const FullArticlePage = ({ articles }) => {
         </div>
         <RemainingArticlesList articles={remainingArticles} />
       </div>
+      {isPaid && (
+        <div className="locked-content-message">
+          <p className="locked-message">Content locked. Subscribe to unlock.</p>
+          <button type="button" onClick={backButton}>⬅ Go back</button>
+        </div>
+      )}
     </div>
   );
 };
