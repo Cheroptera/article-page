@@ -1,6 +1,4 @@
 import React from 'react'
-// import { API_URL } from 'utils/urls';
-// import axios from 'axios';
 
 // This component controls what is displayed in the article previews.
 
