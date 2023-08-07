@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { API_URL } from 'utils/urls';
-import axios from 'axios';
+// import { API_URL } from 'utils/urls';
+// import axios from 'axios';
+import RenderHTML from './RenderHTML';
+import { RemainingArticlesList } from './RemainingArticlesList';
 
-const FullArticlePage = () => {
+// This component displays the content of a full article based on the
+// id parameter from the route and the articles prop.
+
+const FullArticlePage = ({ articles }) => {
   const { id } = useParams();
-  const [article, setArticle] = useState({});
 
-  useEffect(() => {
-    const getArticleById = async () => {
-      try {
-        const response = await axios.get(API_URL(`articles/${id}`));
-        setArticle(response.data);
-      } catch (error) {
-        console.error('Error fetching article', error);
-      }
-    };
-    getArticleById();
-  }, [id]);
+  // First, I used a useEffect here to do a fetch for that specific id, whenever the
+  // id changed, but then it hit me that that API call was unnecessary, since I already could
+  // pass down articles as a prop and filter through the array.
 
+  const article = articles.find((item) => item.id === id);
+
+  // Here I filter out the current article from the list of remaining articles
+  const remainingArticles = articles.filter((item) => item.id !== id)
+
+  // Function to make the time format more readable.
   const formatPublicationDate = (isoDate) => {
     const date = new Date(isoDate);
     const options = {
@@ -33,27 +35,43 @@ const FullArticlePage = () => {
   };
 
   return (
-    <div className="article">
-      <div className="article-image">
-        {article?.body?.find((item) => item.type === 'image') && (
-          <img
-            className="news-img"
-            src={article.body.find((item) => item.type === 'image').src}
-            alt={article.title} />
-        )}
-        <div className="article-content">
-          <div className="article-title">
-            <h1>{article.title}</h1>
-          </div>
-          {article.paid ? (
-            <p className="article-description">Locked content</p>
-          ) : (
-            <p className="article-description">{article?.body?.map((item) => item.html).join(' ')}</p>
+    <div className="full-article-container">
+      <div className="article">
+        <div className="article-image">
+          {/* Conditionally render image */}
+          {article?.body?.find((item) => item.type === 'image') && (
+            <img
+              className="news-img"
+              src={article.body.find((item) => item.type === 'image').src}
+              alt={article.title} />
           )}
-          <div className="article-details">
-            <small>Published full: {formatPublicationDate(article.first_published_at)}</small>
+          <div className="article-content">
+            <div className="article-title">
+              <h1>{article.title}</h1>
+            </div>
+            <div className="article-details">
+              <p>{formatPublicationDate(article.first_published_at)}</p>
+            </div>
+            {/* Conditionally render subhead */}
+            {article?.body?.map((item) => {
+              if (item.type === 'subhead') {
+                return (
+                  <React.Fragment key={item.value}>
+                    <h2 className="sub-head">{item.value}</h2>
+                  </React.Fragment>
+                );
+              } else if (item.type === 'text') {
+                return (
+                  <React.Fragment key={item.html}>
+                    <RenderHTML html={item.html} />
+                  </React.Fragment>
+                );
+              }
+              return null;
+            })}
           </div>
         </div>
+        <RemainingArticlesList articles={remainingArticles} />
       </div>
     </div>
   );
