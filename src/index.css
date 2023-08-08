@@ -41,11 +41,11 @@ transform: scale(1.1);}
 }
 .article-image {
   object-fit: cover;
+  overflow:hidden;
 }
 
 .article-details {
-  font-size: 14px;
-  font-weight:300;
+  font: weight 300;
 }
 
 /* Full article */
@@ -70,21 +70,16 @@ transform: scale(1.1);}
   filter: blur(5px); 
 }
 
-/* I tried to make the Go back-button clickable, but I didn't have
-time to fix it. It has to do with the filter preventing clickable things to work*/
-
 .locked-content-message {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 20px;
+  padding: 20px 40px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
-  pointer-events: none; /* Prevent the message from blocking user interactions */
-  z-index:1000;
 }
 
 
@@ -157,8 +152,12 @@ border: 2px solid #6c7ac9 ;
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 .article {
-  width: 55vw;
+  width: 50vw;
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.article img {
+  width:100%;
 }
 }
 
