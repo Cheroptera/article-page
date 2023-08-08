@@ -3,8 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import RenderHTML from './RenderHTML';
 import { RemainingArticlesList } from './RemainingArticlesList';
 
-// This component displays the content of a full article based on the
-// id parameter from the route and the articles prop.
+// This component displays the full article content, except for when it's paid content.
 
 const FullArticlePage = ({ articles }) => {
   const { id } = useParams();
@@ -15,7 +14,7 @@ const FullArticlePage = ({ articles }) => {
   }
   // First, I used a useEffect here to do a fetch for that specific id, whenever the
   // id changed, but then it hit me that that API call was unnecessary, since I already could
-  // pass down articles as a prop and filter through the array.
+  // pass down 'articles' as a prop and filter through the array.
 
   const article = articles.find((item) => item.id === id);
 
