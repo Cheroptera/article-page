@@ -10,7 +10,7 @@ const FullArticlePage = ({ articles }) => {
   const navigate = useNavigate()
 
   const backButton = () => {
-    navigate(-1)
+    navigate('/')
   }
   // First, I used a useEffect here to do a fetch for that specific id, whenever the
   // id changed, but then it hit me that that API call was unnecessary, since I already could
@@ -45,6 +45,7 @@ const FullArticlePage = ({ articles }) => {
           {article?.body?.find((item) => item.type === 'image') && (
             <img
               className="news-img"
+              loading="lazy"
               src={article.body.find((item) => item.type === 'image').src}
               alt={article.title} />
           )}
@@ -74,6 +75,7 @@ const FullArticlePage = ({ articles }) => {
             })}
           </div>
         </div>
+        {/* The list of other articles with links and a button for easy navigation to start page */}
         <RemainingArticlesList articles={remainingArticles} />
         <button type="button" onClick={backButton}>⬅ Go back</button>
       </div>

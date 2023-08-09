@@ -12,7 +12,7 @@ export const ArticlePreview = ({ title, urlToImage, summary, publicationDate }) 
   return (
     <div className="article">
       <div className="article-image">
-        {urlToImage && <img className="news-img" src={urlToImage} alt={title} />}
+        {urlToImage && <img className="news-img" loading="lazy" src={urlToImage} alt={title} />}
         <div className="article-content">
           <div className="article-title">
             <h1>{title}</h1>
