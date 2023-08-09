@@ -91,8 +91,14 @@ color: grey;
 
 .remaining-articles {
   font-size: large; 
-  margin-bottom: 20px;
+  margin: 0 1em 1.5em 0;
+
 }
+
+.remaining-articles h3 {
+  padding-left: 1em;
+}
+
 
 /* Pagination */
 
