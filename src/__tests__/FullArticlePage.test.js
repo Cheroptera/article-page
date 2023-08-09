@@ -1,10 +1,12 @@
 /* eslint-disable max-len */
+// /* eslint-disable max-len */
 // import React from 'react';
 // import { render } from '@testing-library/react';
 // import { MemoryRouter } from 'react-router-dom';
-// import FullArticlePage from './components/FullArticlePage';
+// import FullArticlePage from 'components/FullArticlePage'
 
-// const mockArticles = [
+// describe('FullArticlePage', () => {
+//   const article =
 //   {
 //     id: '2-1-1438547',
 //     state: 'published',
@@ -32,7 +34,7 @@
 //       },
 //       {
 //         type: 'image',
-//         src: 'https://images.dn.no/image/ZXlucWphd1cyMG9ocVphSEdnTlhNaEZqenpZalNOdnY0U2VKL0RFamdIbz0=/nhst/binary/55cff71d223e804f0872fdfb0e3fb450?image_version=1080',
+//         src: 'https:images.dn.no/image/ZXlucWphd1cyMG9ocVphSEdnTlhNaEZqenpZalNOdnY0U2VKL0RFamdIbz0=/nhst/binary/55cff71d223e804f0872fdfb0e3fb450?image_version=1080',
 //         caption: null,
 //         credit: null,
 //         ratio: '4x3',
@@ -53,18 +55,25 @@
 //         html: '– Våre observasjoner over tid er at bedriftskulturen i Schjødt synes å være en helt annen enn i andre advokatselskaper. Den er ikke forenlig med Blystad Gruppens verdier eller arbeidsmetoder. Det finnes nok av andre gode advokatfirmaer i byen til at bortfallet av Schjødts tjenester skal være noe tap for oss eller alle våre porteføljeselskaper, skriver daglig leder Fredrik Platou i Blystad-gruppen i en tekstmelding til DN.'
 //       }
 //     ]
-//   },
-// ];
+//   }
+// })
 
-// test('displays full article content', () => {
-//   const { getByText, getByAltText } = render(
-//     <MemoryRouter>
-//       <FullArticlePage articles={mockArticles} />
-//     </MemoryRouter>
-//   );
-
-//   const articleTitle = getByText(mockArticles[0].title);
-//   const articleImage = getByAltText(mockArticles[0].title);
-//   // ... add more assertions to test other elements
+// test('renders article preview correctly', () => {
+//   const { getByText, getByAltText } = render(<ArticlePreview {...article} />);
+//   const titleElement = getByText(article.title);
+//   const imageElement = getByAltText(article.title);
+//   expect(titleElement).toBeInTheDocument();
+//   expect(imageElement).toBeInTheDocument();
 // });
 
+// it('displays full article content', () => {
+//   const { getByText, getByAltText } = render(
+//     <MemoryRouter initialEntries={['/articles/1']}>
+//       <Route path="/articles/:id">
+//         <FullArticlePage articles={Articles} />
+//       </Route>
+//     </MemoryRouter>
+//   );
+//   expect(screen.getByText('Derfor boikotter de Schjødt: «Ikke forenlig med Blystad-gruppens verdier»')).toBeInTheDocument();
+
+// })
