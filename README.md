@@ -1,26 +1,35 @@
-# Case Study - Article Page 
-## - with focus on Performance and SEO
+# Case Study - Article Page App with Focus on Performance and SEO
 
-![](https://github.com/Cheroptera/article-page/blob/master/src/images/Screenshot%202023-08-08%20at%2008.11.03.png)
+Welcome to my Article Page App developed as part of the second interview process. This application is built using React with a focus on performance optimization and SEO best practices.
+
+## Introduction
+
+The Article Page App is a frontend application designed to display a list of articles fetched from a mock API. The app is built using React, ensuring a modern and responsive user experience. This project showcases the implementation of various web development principles, including performance optimization and SEO best practices.
 
 ## Features
 
-- Display a list of articles with their titles, publication dates, and summaries.
-- Pagination support for easy navigation through articles.
+- Display a list of articles with their images, titles, publication dates, and   summaries.
+- Lazy load images for improved initial page load time.
+- Implement pagination to limit the number of articles per page.
+- CSS variables and grid layout for responsive styling.
 - Click on an article to view its full content, including images and subheadings.
-- Lock content for paid articles, displaying a message to encourage subscription.
-- Show related articles for easy navigation between articles.
-
+- Handling of paid content, by blurring the article and displaying a message for  locked articles.
+- Article navigation for easy movement between articles.
+- Buttons to go back to start page when needed. 
+- Show "related" articles for easy navigation between articles.
 
 ## Technologies Used
 
-- **React**: The app is built using React, a popular JavaScript library for building user interfaces. React provides a robust foundation for creating interactive and dynamic components.
+- **React**: The app is built using React, a popular JavaScript library for building user interfaces. I used the following hooks for this project: useState, useEffect, useNavigate
 
 - **JSON-server**: A RESTFUL mock server with zero coding and a simple setup, making it the perfect tool for a front-end developer to test quickly out the functionalities of their client-facing application. It is typically used for testing front-end code in applications using frameworks such as Angular, React, or Vue that interact with a REST API.
 
 - **Axios**: Axios is a JavaScript library used to make HTTP requests. It is employed in this project to fetch data from the Mock API.
 
-- **React Testing Library**: React Testing Library is used for testing the project. It provides utilities for testing React components and ensures that the app functions as expected.
+- **Postman**: To make sure the HTTP requests worked, I tested different ones in Postman before adding them to the code base.
+
+- **LightHouse**: Used Lighthouse to make sure the performance, Accessibility, SEO and Best Pratices were up to standard.
+
   
 ## Usage
 
@@ -61,7 +70,6 @@ npm start
 ```
 json-server --watch db.json ---port 8080
 ```
-
 
 7. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to access the app.
 
