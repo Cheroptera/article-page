@@ -1,37 +1,6 @@
 {
   "articles": [
     {
-      "id": "2-1-1412954",
-      "state": "published",
-      "title": "Den frie verden har satt i sjakk",
-      "created_at": "2023-04-28T17:54:11Z",
-      "first_published_at": "2023-04-28T17:54:11Z",
-      "updated_at": "2023-04-28T17:54:11Z",
-      "paid": true,
-      "body": [
-        {
-          "type": "text",
-          "html": "Vi kan stole på svenskene. Det har ikke alltid vært sånn. Vi bygde Hegra festning i Stjørdalen i 1908–1910 fordi vi fryktet krig etter unionsoppløsningen. Og Raufoss ammunisjonsfabrikk noen år før."
-        },
-        {
-          "type": "text",
-          "html": "I dag er Europa, med mulig unntak av enkelte land på Balkan, ett sikkerhetsfellesskap. Grenser er uviktige, vi trenger ikke frykte voldelig konflikt mellom land lengre."
-        },
-        {
-          "type": "text",
-          "html": "Det er fordi vi har integrert oss så tett at vi til og med har felles handelsregler. Barry Buzan og Ole Wæver skrev en viktig studie av dette fenomenet i 2003, «Regions and Powers», hvor de påpekte at Europa er unikt i global sammenheng fordi stater stoler på hverandre."
-        },
-        {
-          "type": "text",
-          "html": "Sikkerhetspolitikk trenger vi altså ikke i Europa. Men det trengs andre steder i verden. Bare reis østover til Kaukasus og Russland, eller til Midtøsten og Afrika, eller til Asia. Der er det ingen sikkerhetsfellesskap, men mistillit mellom land og bruk av militærmakt."
-        },
-        {
-          "type": "text",
-          "html": "Nå er ikke unntaket Europa uberørt lenger. Hverdagen fremover vil bli preget av sikkerhetspolitikk. Dette er tematikken i en bok om krigen i Ukraina og dens politiske konsekvenser som jeg snart publiserer. Hvordan krigen ender, er viktig, men uansett resultat blir det konfliktfylt lenge."
-        }
-      ]
-    },
-    {
       "id": "2-1-1438547",
       "state": "published",
       "title": "Derfor boikotter de Schjødt: «Ikke forenlig med Blystad-gruppens verdier»",
@@ -191,6 +160,37 @@
         {
           "type": "text",
           "html": "Forsiden av medaljen er at det ikke er like rett frem for den med skumle hensikter. Åpen kildekode, som er blitt en slags gullstandard i forskningsverdenen, er en medalje som også har en bakside."
+        }
+      ]
+    },
+    {
+      "id": "2-1-1412954",
+      "state": "published",
+      "title": "Den frie verden har satt i sjakk",
+      "created_at": "2023-04-28T17:54:11Z",
+      "first_published_at": "2023-04-28T17:54:11Z",
+      "updated_at": "2023-04-28T17:54:11Z",
+      "paid": true,
+      "body": [
+        {
+          "type": "text",
+          "html": "Vi kan stole på svenskene. Det har ikke alltid vært sånn. Vi bygde Hegra festning i Stjørdalen i 1908–1910 fordi vi fryktet krig etter unionsoppløsningen. Og Raufoss ammunisjonsfabrikk noen år før."
+        },
+        {
+          "type": "text",
+          "html": "I dag er Europa, med mulig unntak av enkelte land på Balkan, ett sikkerhetsfellesskap. Grenser er uviktige, vi trenger ikke frykte voldelig konflikt mellom land lengre."
+        },
+        {
+          "type": "text",
+          "html": "Det er fordi vi har integrert oss så tett at vi til og med har felles handelsregler. Barry Buzan og Ole Wæver skrev en viktig studie av dette fenomenet i 2003, «Regions and Powers», hvor de påpekte at Europa er unikt i global sammenheng fordi stater stoler på hverandre."
+        },
+        {
+          "type": "text",
+          "html": "Sikkerhetspolitikk trenger vi altså ikke i Europa. Men det trengs andre steder i verden. Bare reis østover til Kaukasus og Russland, eller til Midtøsten og Afrika, eller til Asia. Der er det ingen sikkerhetsfellesskap, men mistillit mellom land og bruk av militærmakt."
+        },
+        {
+          "type": "text",
+          "html": "Nå er ikke unntaket Europa uberørt lenger. Hverdagen fremover vil bli preget av sikkerhetspolitikk. Dette er tematikken i en bok om krigen i Ukraina og dens politiske konsekvenser som jeg snart publiserer. Hvordan krigen ender, er viktig, men uansett resultat blir det konfliktfylt lenge."
         }
       ]
     },
