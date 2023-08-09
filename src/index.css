@@ -6,15 +6,22 @@ p {
 
 /* Article Page */
 
-.main-container {
+.news-list-container, 
+.full-article-container {
   display: grid;
+  justify-items: center;
+  gap: 5px;
 }
-.list-item-container {
+.news-list-item a {
   text-decoration: none; 
 }
+
 .news-list-item {
   display:grid;
-  justify-items: center;
+  width: auto;
+  background: #fff;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 /* News item styling */
@@ -26,8 +33,13 @@ p {
   padding-bottom: 0.5em;
 }
 
-.article:hover {
-transform: scale(1.1);}
+.article:hover h1 {
+color: powderblue;
+}
+
+.article:hover img {
+opacity: calc(0.8);}
+
 
 .article-content {
   border-radius: 5px; 
@@ -39,21 +51,13 @@ transform: scale(1.1);}
   border-bottom:1px solid lightgray;
   padding-bottom: 10px;
 }
-.article-image {
-  object-fit: cover;
-  overflow:hidden;
-}
 
 .article-details {
-  font: weight 300;
+font-weight: 300;
+color: grey;
 }
 
 /* Full article */
-
-.full-article-container {
-  display: grid; 
-  justify-content: center;
-}
 
 .full-article {
   width: 100vw;
@@ -61,8 +65,10 @@ transform: scale(1.1);}
   border-radius: 5px; 
   text-decoration: none;
   padding: 10px;
+  margin-top: 1em;
   padding-bottom: 0.5em;
   z-index: 0;
+  background: #fff;
 }
 
 /* Apply blur effect when content is paid */
@@ -85,6 +91,7 @@ transform: scale(1.1);}
 
 .remaining-articles {
   font-size: large; 
+  margin-bottom: 20px;
 }
 
 /* Pagination */
@@ -92,9 +99,10 @@ transform: scale(1.1);}
 .pagination-container {
   display: flex; 
   justify-content: center;
+  padding-top: 20px;
 }
 
-.pagination {
+.pagination { 
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -131,6 +139,10 @@ border: 2px solid #6c7ac9 ;
 /* Media Queries */
 
 @media screen and (min-width: 1024px) {
+  .news-list-container, 
+  .full-article-container{
+    gap: 20px;
+  }
   .article {
     width: 60vw;
   }
@@ -138,7 +150,7 @@ border: 2px solid #6c7ac9 ;
     width: 55vw;
   }
   .news-list-item {
-    padding: 2.5em;
+    margin-top: 2em;
   }
   .full-article {
     width: 60vw;
@@ -147,6 +159,10 @@ border: 2px solid #6c7ac9 ;
 }
 
 @media screen and (min-width:1500px) {
+  .news-list-container,
+  .full-article-container {
+    gap: 20px;
+  }
   .full-article {
   width: 55vw;
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
