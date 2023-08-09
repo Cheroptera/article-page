@@ -59,13 +59,13 @@ const FullArticlePage = ({ articles }) => {
             {article?.body?.map((item) => {
               if (item.type === 'subhead') {
                 return (
-                  <React.Fragment key={item.value}>
+                  <React.Fragment key={`subhead-${article.id}-${article.body.index}`}>
                     <h2 className="sub-head">{item.value}</h2>
                   </React.Fragment>
                 );
               } else if (item.type === 'text') {
                 return (
-                  <React.Fragment key={item.html}>
+                  <React.Fragment key={`text-${article.id}-${article.body.index}`}>
                     <RenderHTML html={item.html} />
                   </React.Fragment>
                 );
@@ -75,6 +75,7 @@ const FullArticlePage = ({ articles }) => {
           </div>
         </div>
         <RemainingArticlesList articles={remainingArticles} />
+        <button type="button" onClick={backButton}>⬅ Go back</button>
       </div>
       {isPaid && (
         <div className="locked-content-message">
