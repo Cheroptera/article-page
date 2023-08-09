@@ -20,21 +20,21 @@ const ArticlePage = ({ articles }) => {
   const paginatedArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
 
   return (
-    <div className="main-container">
+    <div className="news-list-container">
       {paginatedArticles.map((article) => {
         const articleBodyHtml = article.body.find((item) => item.type === 'text')?.html;
         const articleHtmlContent = articleBodyHtml ? <RenderHTML html={articleBodyHtml} /> : null;
         return (
-          <Link className="list-item-container" key={article.id} to={`/articles/${article.id}`}>
-            <div className="news-list-item">
+          <div className="news-list-item" key={article.id}>
+            <Link to={`/articles/${article.id}`}>
               <ArticlePreview
                 id={article.id}
                 title={article.title}
                 urlToImage={article?.body.find((item) => item.type === 'image')?.src}
                 summary={articleHtmlContent}
                 publicationDate={article.first_published_at} />
-            </div>
-          </Link>
+            </Link>
+          </div>
         );
       })}
 
