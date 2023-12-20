@@ -1,23 +1,24 @@
 /* Global styles */
 p {
   margin-bottom: 20px;
-  font-size:large;
+  font-size: large;
 }
 
 /* Article Page */
 
-.news-list-container, 
+.news-list-container,
 .full-article-container {
   display: grid;
   justify-items: center;
   gap: 5px;
 }
+
 .news-list-item a {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .news-list-item {
-  display:grid;
+  display: grid;
   width: auto;
   background: #fff;
   margin-top: 10px;
@@ -28,33 +29,34 @@ p {
 .article {
   width: 100vw;
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-  border-radius: 5px; 
+  border-radius: 5px;
   color: #000;
   padding-bottom: 0.5em;
 }
 
 .article:hover h1 {
-color: powderblue;
+  color: powderblue;
 }
 
 .article:hover img {
-opacity: calc(0.8);}
+  opacity: calc(0.8);
+}
 
 
 .article-content {
-  border-radius: 5px; 
+  border-radius: 5px;
   padding-bottom: 0.5em;
   padding: 1.5em;
 }
 
 .article-title {
-  border-bottom:1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   padding-bottom: 10px;
 }
 
 .article-details {
-font-weight: 300;
-color: grey;
+  font-weight: 300;
+  color: grey;
 }
 
 /* Full article */
@@ -62,7 +64,7 @@ color: grey;
 .full-article {
   width: 100vw;
   position: relative;
-  border-radius: 5px; 
+  border-radius: 5px;
   text-decoration: none;
   padding: 10px;
   margin-top: 1em;
@@ -73,7 +75,7 @@ color: grey;
 
 /* Apply blur effect when content is paid */
 .full-article.locked {
-  filter: blur(5px); 
+  filter: blur(5px);
 }
 
 .locked-content-message {
@@ -90,7 +92,7 @@ color: grey;
 
 
 .remaining-articles {
-  font-size: large; 
+  font-size: large;
   margin: 0 1em 1.5em 0;
 
 }
@@ -103,18 +105,19 @@ color: grey;
 /* Pagination */
 
 .pagination-container {
-  display: flex; 
+  display: flex;
   justify-content: center;
   padding-top: 20px;
 }
 
-.pagination { 
+.pagination {
   display: flex;
   justify-content: center;
   gap: 10px;
   list-style: none;
   cursor: pointer;
   padding: 0;
+  margin-bottom: 1em;
 }
 
 .pagination a {
@@ -125,7 +128,7 @@ color: grey;
 }
 
 .pagination a:hover {
-border: 2px solid #6c7ac9 ;
+  border: 2px solid #6c7ac9;
 }
 
 .pagination__link {
@@ -145,42 +148,48 @@ border: 2px solid #6c7ac9 ;
 /* Media Queries */
 
 @media screen and (min-width: 1024px) {
-  .news-list-container, 
-  .full-article-container{
-    gap: 20px;
-  }
-  .article {
-    width: 60vw;
-  }
-  .pagination {
-    width: 55vw;
-  }
-  .news-list-item {
-    margin-top: 2em;
-  }
-  .full-article {
-    width: 60vw;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-  } 
-}
 
-@media screen and (min-width:1500px) {
   .news-list-container,
   .full-article-container {
     gap: 20px;
   }
+
+  .article {
+    width: 60vw;
+  }
+
+  .pagination {
+    width: 55vw;
+  }
+
+  .news-list-item {
+    margin-top: 2em;
+  }
+
   .full-article {
-  width: 55vw;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-}
-.article {
-  width: 50vw;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    width: 60vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
 }
 
-.article img {
-  width:100%;
-}
-}
+@media screen and (min-width:1500px) {
 
+  .news-list-container,
+  .full-article-container {
+    gap: 20px;
+  }
 
+  .full-article {
+    width: 55vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  .article {
+    width: 50vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  .article img {
+    width: 100%;
+  }
+}
